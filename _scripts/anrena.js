@@ -163,8 +163,8 @@ var views = {
     selectType: function () {
         var html = '<div class="select-container type"><h2>Select Format:</h2>';
         html += '<a class="select-box type draft-id" id="defaultIDpick" href="javascript:views.selectSide(\'draftid\')">Default ID</a>';
-        html += '<a class="select-box type select-id" id = "draftIDpick" href="javascript:views.selectSide(\'selectid\')">Constructed ID</a>';
 		html += '<a class="select-box type select-id" id = "draftDraftIDpick" href="">Draft ID</a>';
+        html += '<a class="select-box type select-id" id = "draftIDpick" href="javascript:views.selectSide(\'selectid\')">Constructed ID</a>';
         html += '</div>';
         $("#Arena").html(html);
 
@@ -311,9 +311,9 @@ function Script(sideCode, formatCode) {
             } else {
                 views.picked('00005', "draft-id");
             }
-
-
-        } else {
+        } 
+		
+		else {
             blockedCodes = [];
             if (sideCode === "runner") {
                 views.publishChoice(myCardCollection.createSet("runner-id", [], preferences.pickOptions, "", [], "", -1), "runner-id");
@@ -677,6 +677,7 @@ var onDataAvaliable = function (data) {
     imageURLTemplate = data.imageUrlTemplate;
     myArenaScript.start();
 };
+
 $(document).ready(function () {
     views.selectType();
 });
