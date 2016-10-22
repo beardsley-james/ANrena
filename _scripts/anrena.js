@@ -623,7 +623,7 @@ function Schedule() {
 
 var filterFunctions = {
     checkAllowed: function (allowedSets, card) {
-        if (allowedSets.lenght === 0) {
+        if (allowedSets.length === 0) {
             return true;
         }
         if (allowedSets.includes(card["pack_code"])) {
